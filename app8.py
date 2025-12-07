@@ -1939,7 +1939,7 @@ elif menu == "👥 Gerenciar Usuários":
                     'details': 'Detalhes',
                     'ip_address': 'IP'
                 },
-                width='stretch'
+                use_container_width=True
             )
 
             # Resumo de atividades
