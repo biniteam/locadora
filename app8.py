@@ -531,7 +531,7 @@ if menu == "Dashboard":
             st.info("Nenhuma devolução agendada.")
 
     with col_agenda2:
-        st.markdown("##### 📤 Entregas Agendadas (HOJE)(Carros Reservados)")
+        st.markdown("##### 📤 Entregas Agendadas (HOJE)")
         if not df_saidas.empty:
             st.dataframe(df_saidas.rename(columns={'modelo': 'Modelo', 'placa': 'Placa', 'cliente': 'Cliente'}),
                          width='stretch')
