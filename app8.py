@@ -3,6 +3,9 @@ import sqlite3
 import pandas as pd
 from datetime import date, datetime, timedelta
 import os
+#import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import io # Importar io para lidar com dados em memória
 from openpyxl import Workbook
