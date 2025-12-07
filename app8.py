@@ -1813,7 +1813,7 @@ elif menu == "👥 Gerenciar Usuários":
                     'created_at': 'Criado em',
                     'last_login': 'Último Login'
                 },
-                width='stretch'
+                use_container_width=True
             )
 
             # Seleção de usuário para edição
