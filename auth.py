@@ -1,5 +1,5 @@
 """
-Sistema de Autenticação para Locadora Strealit
+Sistema de Autenticação para Locadora Iguacu Veiculos
 Inclui hash de senha, controle de sessão e níveis de usuário
 """
 import streamlit as st
@@ -433,7 +433,7 @@ auth_manager = AuthManager()
 
 def login_page():
     """Página de login"""
-    st.title("🔐 Login - Locadora Strealit")
+    st.title("🔐 Login - Locadora Iguacu Veiculos")
 
     # Verificar se já está logado
     if 'user' in st.session_state and st.session_state.user:
