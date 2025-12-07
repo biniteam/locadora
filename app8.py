@@ -313,7 +313,7 @@ def gerar_recibo_para_download(reserva_id):
 
 # --- INTERFACE ---
 # Título da Página com acento
-st.set_page_config(page_title="Locadora Pro 4.9", layout="wide", page_icon="🚗")
+st.set_page_config(page_title="Locadora Iguacu Veiculos", layout="wide", page_icon="🚗")
 
 # Informações do usuário logado
 st.sidebar.markdown("---")
@@ -519,11 +519,11 @@ if menu == "Dashboard":
     st.divider()
 
     # 3. Agenda do Dia
-    st.subheader("Agenda: Entradas e Saídas do Dia")
+    st.subheader("Agenda: Entradas e Saídas do Dia (HOJE)")
     col_agenda1, col_agenda2 = st.columns(2)
 
     with col_agenda1:
-        st.markdown("##### 📥 Devoluções Previstas")
+        st.markdown("##### 📥 Devoluções Previstas (HOJE)")
         if not df_entradas.empty:
             st.dataframe(df_entradas.rename(columns={'modelo': 'Modelo', 'placa': 'Placa', 'cliente': 'Cliente'}),
                          width='stretch')
@@ -531,7 +531,7 @@ if menu == "Dashboard":
             st.info("Nenhuma devolução agendada.")
 
     with col_agenda2:
-        st.markdown("##### 📤 Entregas Agendadas (Carros Reservados)")
+        st.markdown("##### 📤 Entregas Agendadas (HOJE)(Carros Reservados)")
         if not df_saidas.empty:
             st.dataframe(df_saidas.rename(columns={'modelo': 'Modelo', 'placa': 'Placa', 'cliente': 'Cliente'}),
                          width='stretch')
