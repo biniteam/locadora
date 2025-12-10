@@ -470,7 +470,7 @@ if menu == "Dashboard":
             st.dataframe(
                 livres_check.rename(columns={'modelo': 'Modelo', 'placa': 'Placa'})[
                     ['Modelo', 'Placa', 'Diária (R$)', 'Preço/KM (R$)']],
-                width='stretch'
+                use_container_width=True
             )
         elif isinstance(livres_check, str):
             st.error(f"Erro ao consultar disponibilidade: {livres_check}")
