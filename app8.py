@@ -966,7 +966,7 @@ elif menu == "1. Reservar Veículo":
                 reservas_gerenciar_display[
                     ['Cliente', 'Veiculo', 'Placa', 'data_inicio', 'data_fim', 'Status da Reserva', 'KM Franquia',
                      'Adiantamento', 'Multas', 'Danos', 'Outros Custos']],
-                width="stretch"
+                use_container_width=True
             )
 
             # Seleção de reserva para edição/exclusão
