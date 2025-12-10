@@ -494,7 +494,7 @@ if menu == "Dashboard":
                     'cliente': 'Cliente',
                     'data_fim': 'Devolução Prevista'
                 }),
-                width='stretch'
+                use_container_width=True
             )
         else:
             st.success("🎉 Nenhum veículo locado no momento.")
@@ -511,7 +511,7 @@ if menu == "Dashboard":
                     'cliente': 'Cliente',
                     'data_inicio': 'Data Prevista da Entrega'
                 }),
-                width='stretch'
+                use_container_width=True
             )
         else:
             st.info("Nenhuma reserva pendente de entrega.")
@@ -526,7 +526,7 @@ if menu == "Dashboard":
         st.markdown("##### 📥 Devoluções Previstas (HOJE)")
         if not df_entradas.empty:
             st.dataframe(df_entradas.rename(columns={'modelo': 'Modelo', 'placa': 'Placa', 'cliente': 'Cliente'}),
-                         width='stretch')
+                         use_container_width=True)
         else:
             st.info("Nenhuma devolução agendada.")
 
@@ -534,7 +534,7 @@ if menu == "Dashboard":
         st.markdown("##### 📤 Entregas Agendadas (HOJE)")
         if not df_saidas.empty:
             st.dataframe(df_saidas.rename(columns={'modelo': 'Modelo', 'placa': 'Placa', 'cliente': 'Cliente'}),
-                         width='stretch')
+                         use_container_width=True)
         else:
             st.info("Nenhuma nova locação agendada.")
 
@@ -595,7 +595,7 @@ elif menu == "Clientes":
             df_clientes_display['validade_cnh'] = pd.to_datetime(df_clientes_display['validade_cnh']).dt.strftime(
                 '%d/%m/%Y')
 
-            st.dataframe(df_clientes_display, width='stretch')
+            st.dataframe(df_clientes_display, use_container_width=True)
 
             cliente_opcoes = df_clientes['id'].astype(str) + " - " + df_clientes['nome']
             opcoes_com_placeholder = ["Selecione o cliente..."] + cliente_opcoes.tolist()
@@ -728,7 +728,7 @@ elif menu == "Frota (Carros)":
             )
 
             # Exibe apenas as colunas principais incluindo a nova coluna calculada
-            st.dataframe(df_display[['id', 'modelo', 'placa', 'cor', 'km_atual', 'km_troca_oleo', 'km_ate_proxima_troca', 'diaria', 'status', 'numero_chassi', 'numero_renavam', 'ano_veiculo']], width='stretch')
+            st.dataframe(df_display[['id', 'modelo', 'placa', 'cor', 'km_atual', 'km_troca_oleo', 'km_ate_proxima_troca', 'diaria', 'status', 'numero_chassi', 'numero_renavam', 'ano_veiculo']], use_container_width=True)
 
             carro_opcoes = df['id'].astype(str) + " - " + df['modelo'] + " (" + df['placa'] + ")"
             opcoes_com_placeholder = ["Selecione o veículo..."] + carro_opcoes.tolist()
@@ -1604,7 +1604,7 @@ elif menu == "Histórico":
 
             st.dataframe(
                 df_historico_display[['Cliente', 'Veiculo', 'Placa', 'Inicio', 'Fim', 'Total_Faturado', 'Km_Rodados', 'Lucro_por_km']],
-                width='stretch'
+                use_container_width=True
             )
 
         else:
